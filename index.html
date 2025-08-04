@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotto Santos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Poppins:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @font-face {
+            font-family: 'Pricedown';
+            src: url('https://fonts.cdnfonts.com/css/pricedown') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1a0933 0%, #2a1155 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        .title-font {
+            font-family: 'Luckiest Guy', cursive;
+        }
+        
+        .gta-font {
+            font-family: 'Press Start 2P', cursive;
+            letter-spacing: 1px;
+        }
+        
+        .font-pricedown {
+            font-family: 'Pricedown', sans-serif;
+            font-size: 1.2em;
+            letter-spacing: 2px;
+        }
+        
+        .glow {
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+        
+        .card-glow {
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .carousel {
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .carousel::-webkit-scrollbar {
+            display: none;  /* Chrome, Safari and Opera */
+        }
+        
+        .carousel-item {
+            scroll-snap-align: start;
+            flex: 0 0 auto;
+        }
+        
+        .number-badge {
+            background: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%);
+        }
+        
+        .instruction-box {
+            background: linear-gradient(135deg, rgba(46, 49, 146, 0.8) 0%, rgba(27, 20, 100, 0.8) 100%);
+            border: 2px solid #f9d423;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+    <!-- Header Section -->
+    <header class="py-8 px-4 text-center">
+        <div class="container mx-auto">
+            <div class="flex justify-center mb-4">
+                <img src="img/lotto2.png.png" alt="Lotto Santos Logo" 
+                     class="w-full max-w-3xl glow">
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <p class="text-lg sm:text-xl md:text-2xl text-blue-200 mb-4 sm:mb-6">
+                    A cada <span class="font-bold text-yellow-400">$500</span> você tem o direito a escolher um número de <span class="font-bold text-yellow-400">1 a 1000</span>.
+                </p>
+                <p class="text-lg sm:text-xl md:text-2xl text-purple-200">
+                    Quanto mais números você comprar, maiores são as suas chances de ganhar!
+                </p>
+            </div>
+            
+            <div class="mt-8 sm:mt-10 max-w-2xl mx-auto instruction-box rounded-xl p-4 sm:p-6 relative overflow-hidden pulse">
+                <div class="absolute -top-4 -right-4 bg-yellow-400 text-purple-900 font-bold rounded-full w-12 h-12 flex items-center justify-center">
+                    <i class="fas fa-info-circle text-2xl"></i>
+                </div>
+                <h3 class="text-xl sm:text-2xl font-bold text-yellow-400 mb-3 sm:mb-4">Como Participar</h3>
+                <ol class="space-y-2 sm:space-y-3 text-base sm:text-lg">
+                    <li class="flex items-start">
+                        <span class="bg-yellow-400 text-purple-900 font-bold rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1">1</span>
+                        Faça uma transferência bancária para a conta <span class="font-bold text-yellow-400 ml-1">4330720</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="bg-yellow-400 text-purple-900 font-bold rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1">2</span>
+                        Envie uma mensagem de texto para o número <span class="font-bold text-yellow-400 ml-1">674-1310</span> 
+                        
+                    </li>
+                    <br>Na mensagem de texto deve <br> conter as seguintes informações:
+                    <ul class="ml-6 sm:ml-10 space-y-1 sm:space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-yellow-400 text-xs mr-2"></i>
+                            Nome do titular da transferência
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-yellow-400 text-xs mr-2"></i>
+                            Valor enviado
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-yellow-400 text-xs mr-2"></i>
+                            Números escolhidos (de 1 a 1000)
+                        </li>
+                    </ul>
+                </ol>
+            </div>
+        </div>
+    </header>
+
+    <!-- Participants Carousel Section -->
+    <section class="py-12 px-4 flex-1">
+        <div class="container mx-auto">
+            <h2 class="title-font text-4xl text-center mb-10 text-white">
+                <span class="text-yellow-400">Últimos</span> Participantes
+            </h2>
+            
+            <div class="relative">
+                <div class="carousel flex overflow-x-auto space-x-6 py-4 px-2" id="participants-carousel">
+                    <!-- Participant Cards will be added here by JavaScript -->
+                </div>
+                
+                <button class="carousel-nav absolute left-0 top-1/2 -translate-y-1/2 -ml-4 bg-purple-800 bg-opacity-80 text-yellow-400 rounded-full w-12 h-12 flex items-center justify-center z-10 hover:bg-yellow-400 hover:text-purple-900 transition-all" onclick="scrollCarousel(-1)">
+                    <i class="fas fa-chevron-left text-2xl"></i>
+                </button>
+                <button class="carousel-nav absolute right-0 top-1/2 -translate-y-1/2 -mr-4 bg-purple-800 bg-opacity-80 text-yellow-400 rounded-full w-12 h-12 flex items-center justify-center z-10 hover:bg-yellow-400 hover:text-purple-900 transition-all" onclick="scrollCarousel(1)">
+                    <i class="fas fa-chevron-right text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accumulated Value Section -->
+    <section class="py-6 sm:py-8 px-4 bg-purple-900 bg-opacity-30">
+        <div class="container mx-auto max-w-4xl">
+            <div class="bg-gradient-to-r from-purple-800 to-blue-900 rounded-xl p-4 sm:p-6 text-center card-glow">
+                <h3 class="title-font text-2xl sm:text-3xl text-yellow-400 mb-2">Valor Acumulado</h3>
+                <div class="text-3xl sm:text-5xl font-bold text-white mb-3 sm:mb-4">R$ 5.000,00</div>
+                <p class="text-lg sm:text-xl text-blue-200">Próximo sorteio em: <span class="font-bold text-yellow-400">15 dias</span></p>
+                <p class="text-lg sm:text-xl text-blue-200">O número sorteado leva o pote! </p>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-purple-300 text-sm">
+        <p>Lotto Santos - Aposte com moderação</p>
+        <p class="mt-1">((Não envolve apostas com dinheiro real.))</p>
+    </footer>
+
+    <script>
+        // Sample participant data
+        const participants = [
+            { name: "Oddny Halfdan", total: 1500, numbers: [7, 42, 199] },
+            { name: "Marqués Gordon", total: 500, numbers: [88] },
+            { name: "Rhad Cole", total: 2000, numbers: [13, 27, 150, 299] },
+            { name: "Mackenna Sutton", total: 1000, numbers: [5, 123] }
+           
+        ];
+
+        // Function to generate participant cards
+        function generateParticipantCards() {
+            const carousel = document.getElementById('participants-carousel');
+            
+            participants.forEach(participant => {
+                const card = document.createElement('div');
+                card.className = 'carousel-item w-64 sm:w-72 flex-shrink-0 bg-purple-900 bg-opacity-70 rounded-xl p-4 sm:p-6 card-glow hover:scale-105 transition-transform duration-300';
+                
+                // Participant name
+                const nameElement = document.createElement('h3');
+                nameElement.className = 'text-xl sm:text-2xl font-bold text-yellow-400 mb-2 sm:mb-3';
+                nameElement.textContent = participant.name;
+                
+                // Total bet
+                const totalElement = document.createElement('div');
+                totalElement.className = 'flex items-center text-base sm:text-lg mb-3 sm:mb-4';
+                totalElement.innerHTML = `
+                    <span class="bg-green-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">
+                        <i class="fas fa-coins"></i>
+                    </span>
+                    Total: <span class="font-bold text-yellow-400 ml-1">$${participant.total}</span>
+                `;
+                
+                // Numbers
+                const numbersElement = document.createElement('div');
+                numbersElement.className = 'flex flex-wrap gap-2';
+                
+                participant.numbers.forEach(num => {
+                    const numBadge = document.createElement('span');
+                    numBadge.className = 'number-badge text-white font-bold rounded-full w-10 h-10 flex items-center justify-center';
+                    numBadge.textContent = num;
+                    numbersElement.appendChild(numBadge);
+                });
+                
+                // Append all elements to card
+                card.appendChild(nameElement);
+                card.appendChild(totalElement);
+                card.appendChild(numbersElement);
+                
+                carousel.appendChild(card);
+            });
+        }
+
+        // Function to scroll carousel
+        function scrollCarousel(direction) {
+            const carousel = document.getElementById('participants-carousel');
+            const scrollAmount = 1000;
+            carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
+        // Auto-scroll carousel
+        function autoScrollCarousel() {
+            const carousel = document.getElementById('participants-carousel');
+            const scrollWidth = carousel.scrollWidth;
+            const clientWidth = carousel.clientWidth;
+            
+            if (carousel.scrollLeft + clientWidth >= scrollWidth) {
+                carousel.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                carousel.scrollBy({ left: 1000, behavior: 'smooth' });
+            }
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            generateParticipantCards();
+            setInterval(autoScrollCarousel, 5000);
+        });
+    </script>
+</body>
+</html>
